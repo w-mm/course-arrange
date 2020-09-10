@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../resource/layui/css/layui.css">
+    <script href="../resource/layui/layui.js"></script>
+
+    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body  class="loginBody">
+
+    <div class="loginBody2"></div> <!--    幕布-->
+<!--    login板块-->
+    <div class="loginBlock">
+        <p style="margin-top: 40px"></p>
+
+        <span class="login_title" >账户登陆</span>
+
+<!--        输入输出框的设置-->
+        <div>
+            <form th:action="@{/login1}" method="post">
+                <input name="userId" class="userName" type="text" autocomplete="off" placeholder="邮箱/账号/手机号" >
+                <input name="userPassword" class="password" type="password" autocomplete="off" placeholder="密码" >
+
+                <input class="login_btn" type="submit" value="登陆" >
+                <BUTTON class="register_btn" >
+                    <a href="/register">
+                        <p style="float: right">
+                            <span style="color: #CEBCB3">还没有账号？</span>
+                            <span STYLE="color: #32C1F4">去注册</span>
+                        </p>
+                    </a>
+
+                </BUTTON>
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

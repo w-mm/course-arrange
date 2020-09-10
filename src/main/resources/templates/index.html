@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <link rel="stylesheet" href="../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}">
+    <script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+
+    <script src="../static/jq/jquery-1.12.4.min.js" th:src="@{/jq/jquery-1.12.4.min.js}"></script>
+    <script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+<body>
+<!--导航栏-->
+    <div style="position: relative">
+        <ul class="layui-nav" id="nav" >
+            <li class="layui-nav-item " >
+                    <a href="/" class="layui-nav-item ">
+                        <img style="height:32px;width: 127px;margin-left: 20px;margin-top: -5px" src="../static/images/logo.png" th:src="@{/images/logo.png}"/>
+                    </a>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="">
+                    <div class="nav-a-text">
+                        首页
+                    </div>
+                </a>
+            </li>
+            <li class="layui-nav-item " >
+                <div class="nav-a-huawen">
+                    <a href="">
+                        <img style="height:25px;width: 65px" src="../static/images/huawenmuke.png" th:src="@{/images/huawenmuke.png}"/>
+                    </a>
+                </div>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="">
+                    <div class="nav-a-teaTr">
+                        教师培训
+                    </div>
+                </a>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="">
+                    <div class="nav-a-doubleS">
+                        双选会
+                        <img style="width: 21px;height: 10px;vertical-align: top;margin-top: 15px;"src="../static/images/1.png" th:src="@{/images/1.png}"/>
+                    </div>
+                </a>
+            </li>
+            <li class="layui-nav-item ">
+                <div class="nav-a-dealQ">
+                    <a style="font-size:16px;color: white" href="">
+                           解决方案
+                    </a>
+                    <dl class="layui-nav-child" style="width: 120px;margin-left: -40px;margin-top: -5px">
+                        <dd style="font-size:24px;margin-top: 10px;"><a href="">申请机构版</a></dd>
+                        <dd style="font-size:24px;margin-top: 10px;"><a href="">本地化部署</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="">
+                    <div class="nav-a-teaTr">
+                        帮助中心
+                    </div>
+                </a>
+            </li>
+            <li class="layui-nav-item ">
+                <div class="more">
+                    <a style="font-size:16px;color: white" href="">
+                        更多
+                    </a>
+                    <dl class="layui-nav-child" style="width: 120px;margin-left: -20px;margin-top: -5px">
+                        <dd style="font-size:24px;margin-top: 10px;"><a href="">会员权益</a></dd>
+                        <dd style="font-size:24px;margin-top: 10px;"><a href="">产品动态</a></dd>
+                    </dl>
+                </div>
+            </li>
+
+            <li class="layui-nav-item regbtnL" >
+                <button class="regbtn" href="/register"><a href="/register">注册</a></button>
+            </li>
+            <li class="layui-nav-item loginbtnL">
+                <a  href="/login">
+                    <button class="loginbtn">登录</button>
+                </a>
+                <!--                th:text="${session.users.getUserId()}"-->
+            </li>
+        </ul>
+
+    </div>
+
+<!--轮播图-->
+    <div>
+        <div class="layui-carousel" id="test1" lay-filter="test1" >
+            <div carousel-item="6" style="width: 100%">
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner1.png" th:src="@{/images/lunbo/banner1.png}"/></div>
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner2.png" th:src="@{/images/lunbo/banner2.png}"/></div>
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner3.png" th:src="@{/images/lunbo/banner3.png}"/></div>
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner4.png" th:src="@{/images/lunbo/banner4.png}"/></div>
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner6.png" th:src="@{/images/lunbo/banner6.png}"/></div>
+                <div style="width: 1343px;transform: translate3d(-200px, 0px, 0px);transition-duration: 0ms;"><img src="../static/images/lunbo/banner8.png" th:src="@{/images/lunbo/banner8.png}"/></div>
+            </div>
+        </div>
+    </div>
+
+<div class="section-video">
+    <div class="vide-warp">
+        <h2>【专家报告视频会】钟南山、李兰娟、张文宏同台指导学校疫情防控工作</h2>
+        <p class="introduction">4月20日下午3点，教育部召开学校疫情防控专家报告视频会，会议深入贯彻习近平总书记重要指示批示精神和党中央、国务院决策部署，指导各地各校全面做好学校疫情防控工作…<a href="https://mp.weixin.qq.com/s/dGMZOYUzk0cKnIZRirr1AA" target="_blank" >>>查看内容</a></p>
+        <div class="videoBox"><video id="Video" controls preload="auto"  style="width:700px;" src="https://assets.ketangpai.com/20200420/0420yiqingedu.mp4"></video></div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="cWidth">
+        <div class="nav-new clearfix">
+            <a href="/index/abouts.html">关于我们</a>
+            <a href="/index/contact.html">联系我们</a>
+            <a href="/index/service.html">服务条款</a>
+            <a href="/index/older.html" target="_blank">浏览器下载</a>
+            <a href="/index/updateDynamics">更新动态</a>
+        </div>
+        <p>Copyright © 2014 ketangpai.com All Rights Reserved. 京ICP备14023276号-4<div style="width:300px;margin:0 auto; padding:20px 0;"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011402010566" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11011402010566号</p></a></div></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.registerBody{height: 100%;}
+.registerBody{ background:url("../images/register.jpg") no-repeat center center fixed;  -webkit-background-size: cover;-o-background-size: cover; background-size: cover;}
+
+.register_main{width: 480px;height: 500px;background: white;border-radius: 5px;margin: 40px auto;position: relative;display: block}
+
+/*学生教师注册选择界面*/
+.register_init{position: absolute}
+.registerId_title{margin-left:30px;font-size: 30px;color: #3B3D45}
+.p_titleB{margin-left:30px;color: #707070;font-size: 12px;margin-top: -10px;}
+    /*老师选择按钮*/
+.register_teacher{width: 460px;height: 65px;margin-top: 70px;margin-left: 20px;position: relative}
+.register_teacher_and_student_button{height: 65px;width: 330px;margin-left:25px;background: #32BAF0;float: top;position: absolute;border-radius: 5px;border: none;color: white;font-size: 16px;cursor:pointer}
+    /*学生选择按钮*/
+.register_student{width: 460px;height: 65px;margin-top: 70px;margin-left: 20px;position: relative}
+/*最下面点击到登陆页面那句话*/
+.register_btn{border: none;background: none;width: 300px;margin-top: 5px;float: right;cursor:pointer;margin-right: 35px}
+
+/*teacher注册页面*/
+.teacher{width: 480px;height: 570px;background: white;border-radius: 5px;margin: 40px auto;position: relative;display: none}
+/*.title_t{position: absolute;margin-left: 30px;}*/
+.img_return{margin-left: 30px;display: inline;margin-top: 30px;position: absolute;z-index: 999}
+
+.text{position: absolute;margin-top: 30px;margin-left: 90px;font-size: 30px;color: #3B3D45}
+    /*from部分*/
+.from_s{margin-left: 40px;margin-top: 45px;position: absolute}
+.userName{width: 400px;height: 45px;border-radius:5px;margin-top:50px;border: 1px solid #E2E6ED;text-indent: 10px;font-size: 16px}
+.userName:hover{border: 1px solid #32BAF0}
+.password{width: 400px;height: 45px;border-radius:5px;margin-top: 13px;border: 1px solid #E2E6ED;text-indent: 10px;font-size: 16px}
+.password:hover{border: 1px solid #32BAF0}
+
+.code{width: 200px;height: 45px;margin-top: 10px;border: 1px solid #E2E6ED;text-indent: 10px;font-size: 16px}
+.code:hover{border: 1px solid #32BAF0}
+#loginValidateCode{height: 50px;width: 190px;padding-top: 10px;border: none;cursor: pointer;position: absolute;margin-left: 10px}
+
+.teacher_register_btn{height: 50px;width: 400px;background: #32BAF0;border: none;margin-top:20px;border-radius: 5px;color: white}
+.teacher_register_btn:hover{background: #4D90FE}
+    /*错误提示*/
+.userName_er{font-size: 12px;color: red;margin-top: -2px;margin-bottom: -15px;float: right;margin-right: 37px;display: none;}
+.code_er{font-size: 12px;color: red;margin-top: 60px;margin-bottom: -15px;float: right;margin-right: 37px;display: none;}
+/*student注册页面*/
+.student{width: 480px;height: 630px;background: white;border-radius: 5px;margin: 40px auto;position: relative;display: none;}

@@ -1,0 +1,48 @@
+
+.nav-div{border-bottom:3px solid #EDEDED;height: 70px}
+.nav{margin-left: 200px;border-bottom:3px solid #EDEDED;height: 56px;}
+
+.second{width: 100%;height: 60px;margin-left: 50px;margin-top: 40px}
+.second ul{list-style-type:none;float: right;margin-right: 120px}
+.second ul li{float: left}
+.li-kec{color: #5F6368;cursor: pointer;font-size: 16px;margin-top: 0px}
+.li-guidang{color: #5F6368;cursor: pointer;font-size: 16px;margin-left: 20px;margin-top: 0px}
+.li-addkec{color: #5F6368;cursor: pointer;font-size: 16px;margin-left: 20px;margin-top: -5px}
+.Addbutton{border-radius: 3px;background: #32BAF0;border: none;color: white;width: 100px;height: 35px;cursor: pointer}
+
+hr{margin-top:25px;margin-right: 120px}
+
+.center{width: 95%;text-align: center;overflow:hidden;margin-top: -15px}
+
+/*块区*/
+.dl1{width: 270px;height: 300px;border-radius: 8px;border: 1px solid #E2E6ED;float: left;margin-left:46px;margin-top: 15px;position: relative;}
+.dt1{width: 270px;height: 128px;background: url("../images/course/1.png");border-radius: 8px 8px 0 0;}
+.a1{cursor: pointer;font-size: 20px;color: white;float: left;margin-left: 17px;margin-top: 20px}
+.a1:hover{text-decoration: underline;color: white}
+
+.class-div{width: 270px;height: 77px;position: absolute;margin-top: 50px}
+.p1{color: white;font-size: 16px;float: left;margin-left: 17px}
+.p1-1{width: 120px;height: 25px;background: rgba(255,255,255,.2);margin-top: 35px;margin-left: 17px}
+/*    !*作业块*!*/
+.dd1{height: 132px;width: 270px;}
+.dd1 ul{margin-left: 17px;margin-top: 10px;}
+.ul-span{color: #5F6368;font-size: 12px;float: left;margin-top: 10px;margin-left: 17px}
+.dd1 ul li a{float: left;cursor: pointer}
+.dd1 ul li a:hover{color: #44A3CF;text-decoration: underline;}
+.cancelCourse{width: 128px;height: 63px;z-index: 999;position: absolute;margin-left: 130px;margin-top: 195px;box-shadow:1px 2px 3px rgba(0,0,0,0.2);border: 1px solid #dcdcdc;display: none}
+.cancelCourse li{width: 128px;height: 30px;line-height: 30px;cursor: pointer}
+.cancelCourse li:hover{background: #f6f6f6}
+    /*更多区*/
+.ddfoot{width: 270px;height: 40px;border-radius: 0 0 8px 8px;border-top: 1px solid  #E2E6ED;}
+
+
+
+/*幕布+添加课程*/
+.StuBody2{width: 100%;height: 100%;background: rgba(20, 27, 47, 0.35);position: fixed;top: 0;left: 0; z-index: 10;display: none}
+.addCourse-div{width: 295px;height: 210px;background: white;position: absolute;top: 50%;left: 50%;margin-top: -105px;margin-left: -147px}
+.input-addCourse{color: #2d2d2d;font-size: 14px;width: 250px;margin-left: 20px;height: 20px;line-height: 20px;padding-bottom: 6px;border-top: none;border-left: none;border-right: none;border-bottom: 1px solid #ececec;}
+.cancelBtn{width: 86px;height: 38px;line-height: 38px;text-align: center;background: none;border-radius: 3px;font-size: 16px;border: none;cursor: pointer;color: #818181;margin-left: 35px;margin-top: 15px}
+.cancelBtn:hover{background: #F0F0F0}
+.addBtn{width: 86px;height: 38px;line-height: 38px;text-align: center;border-radius: 3px;font-size: 16px;border: none;background: #96B8EE;color: white;margin-left: 30px;margin-top: 15px}
+
+

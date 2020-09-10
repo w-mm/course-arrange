@@ -1,0 +1,55 @@
+.nav-div{border-bottom:3px solid #EDEDED;height: 70px;}
+.courseTitle-div{height: 70px;line-height: 70px;margin-left: 30px;font-size: 16px;}
+.courseTitle-span{height: 32px;line-height: 32px;background: #2c58ab;display: inline-block;border-radius: 16px;padding: 0 10px;color: white;cursor:pointer}
+.nav{margin-left: 560px;border-bottom:3px solid #EDEDED;height: 56px;margin-top: -53px}
+
+.center-content{width: 1020px;border: 1px solid #c8c8c8;height: 1000px;position: absolute;left: 50%;margin-left: -510px;margin-top: 40px;margin-bottom: 60px;}
+
+.homeWork-title-div{width: 100%;height: 147px;border-bottom: 1px solid #c8c8c8;position: relative}
+.title-content-div{width: 960px;height: 100px;position: absolute;top: 50%;margin-top: -50px;left: 50%;margin-left: -480px}
+.generate-final-grade{height: 26px;line-height: 26px;display: block;text-align: center;background-color: #fff;color: #818181;font-family: "微软雅黑";cursor: pointer;-webkit-user-select: none;border-radius: 3px;padding: 0 10px;float: right;border: 1px solid #ccc;}
+.togsh{margin-top: 40px}
+.togsh p{padding: 5px 20px;background:rgba(0,0,0,.1);margin-left: 10px;float: left}
+.chachongSet{color: #999;height: 30px;line-height: 30px;cursor: pointer;float: right;margin-right: 15px}
+.span-forStudent{width: 130px;display: block;text-indent: 20px;height: 30px;line-height: 30px;color: #FFF;background:  #357ae8;cursor: pointer;font-size: 12px;float: right;margin-right: 15px}
+.search-bar{width: 150px;height: 20px;padding: 4px 10px 4px 20px;float: right;font-size: 14px;border: 1px solid rgb(200, 200, 200);}
+#search-txt{width: 130px;font-size: 14px;color: #a9a9a9;line-height: 20px;height: 20px;border: none}
+.sousuo-img{height: 20px;width: 20px;position: absolute;}
+
+.student-score-dispaly-div{position: absolute;margin-top: 30px;margin-left: 633px;padding: 5px 0;min-width: 187px;background: #FFF;border: 1px solid #dcdcdc;z-index: 3;box-shadow: 1px 2px 4px rgba(0,0,0,.2);display: none}
+.xianshi{height: 37px;display: block;line-height: 37px;color: #2c2c2c;padding-left: 15px;font-size: 12px;cursor: pointer}
+.xianshi:hover{background-color: #e6e6e6;}
+.yingc{height: 37px;display: block;line-height: 37px;color: #2c2c2c;padding-left: 15px;font-size: 12px;cursor: pointer}
+.yingc:hover{background-color: #e6e6e6;}
+
+.review{width: 960px;position: absolute;margin-top: 18px;left: 50%;margin-left: -480px;}
+.work-tips {background: #fff;box-sizing: border-box;border: 1px solid #DCDCDC;
+}
+.classify{border-bottom: 1px dashed #eaeaea;}
+.classify dt{color: #5A5A5A;line-height: 46px;height: 46px;width: 150px;border-right: 1px solid #DCDCDC;background: #F2F2F2;text-indent: 30px;font-size: 12px;margin-right: 36px;border-bottom: 1px dashed #eaeaea;margin-bottom: -1px;}
+.cur {border: none;background: #357AE8;border-radius: 2px;cursor: default;color: #FFF;width: 48px;text-align: center}
+
+.c-span{margin-left: 20px}
+.c-span:hover{color: #4d90fe;}
+.work-tips span{cursor: pointer;}
+.work-tips span:hover{color: #4d90fe;}
+
+.select-group {padding: 20px 0;position: relative;}
+.typehead {height: 40px;border: 1px solid #DCDCDC;background-color: #F6F6F6;}
+.typehead li {display: inline-block;float: left;vertical-align: middle;}
+.typehead li a {text-align: center;display: block;width: 100px;line-height: 38px;border: 1px solid transparent;margin-left: -1px;color: #595959;font-size: 12px;}
+.typehead li a:hover{color: #4d90fe; }
+
+.date-div td{width: 105px;height: 40px;text-align: center}
+.date-div tr{}
+.date-div tr:hover{background:#dcdcdc; }
+
+.score-inp{width: 60px;height: 24px;line-height: 24px;color: #5A5A5A;border-bottom: 1px #818181 solid;border-left:none;border-right: none;border-top:none;background: none;cursor: text;font-size: 18px;text-align: center;display: inline-block;}
+.score-inp:hover{border-bottom-color: #4d90fe}
+.pyue{cursor: pointer;font-size: 16px;color: #4D90FE;}
+.pyue:hover{text-decoration: underline;color:#4D90FE; }
+
+
+
+
+

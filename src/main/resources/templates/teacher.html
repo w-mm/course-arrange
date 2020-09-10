@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>teacher</title>
+
+    <link rel="stylesheet" href="../static/layui/css/layui2.css" th:href="@{/layui/css/layui2.css}">
+    <script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+
+    <script src="../static/jq/jquery-1.12.4.min.js" th:src="@{/jq/jquery-1.12.4.min.js}"></script>
+    <script  src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
+    <link rel="stylesheet" href="../static/css/teacher.css" th:href="@{/css/teacher.css}">
+<body>
+    <div class="nav-div">
+        <!--    log图标-->
+        <a href="/" style="border: none">
+            <img style="height:24px;width: 96px;margin-left: 67px;margin-bottom: -58px;border: none" src="../static/images/student/logo-mainblue.png" th:src="@{/images/student/logo-mainblue.png}"/>
+        </a>
+        <ul class="layui-nav nav" >
+            <!--        课堂-->
+            <li class="layui-nav-item layui-this" >
+                <a href="" STYLE="color: #3B3D45;font-size: 16px;margin-top: -5px;">课堂</a>
+            </li>
+    <!--        备课区-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">备课区</a>
+            </li>
+            <!--        精品慕课-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">精品慕课</a>
+            </li>
+            <!--        我的精品-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">我的精品</a>
+            </li>
+            <!--        双选会-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">双选会</a>
+            </li>
+            <!--        论文管理-->
+            <li class="layui-nav-item ">
+                <div style="height: 60px;width: 120px;position: relative">
+
+                    <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">论文管理</a>
+                    <img style="width: 21px;height: 10px;position:absolute;top: 10px;right: 15px" src="../static/images/1.png" th:src="@{/images/1.png}"/>
+                </div>
+            </li>
+            <!--        工具-->
+            <li class="layui-nav-item " style="position: absolute;right: 110px;top: 8px">
+                <div style="height: 60px;width: 120px;position: relative;">
+                    <a href="" STYLE="color: #5F6368;margin-top: -13px;font-size: 16px;margin-left: 25px">工具</a>
+                    <img style="width: 27px;height: 27px;position:absolute;top: 15px;left: 15px" src="../static/images/student/tool_icon.png" th:src="@{/images/student/tool_icon.png}"/>
+                </div>
+                <dl class="layui-nav-child" style="margin-top: -15px">
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 10px">论文查重</SPAN>
+                        <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/paperrepeaticon.png" th:src="@{/images/student/paperrepeaticon.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 10px">学术存证</SPAN>
+                        <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/sjczicon.png" th:src="@{/images/student/sjczicon.png}"/>
+                    </a>
+                    </dd> <dd><a href="javascript:;"><SPAN style="margin-left: 10px">邀请教师</SPAN>
+                    <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/teacher/addteacher1.png" th:src="@{/images/teacher/addteacher1.png}"/>
+                </a>
+                </dd>
+                </dl>
+            </li>
+            <!--铃铛图标-->
+            <li class="layui-nav-item " style="position: absolute;right: 75px;top: 0px">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">
+                    <img class="layui-nav-img" style="margin-top: -10px;" src="../static/images/student/lingd.png" th:src="@{/images/student/lingd.png}">
+                </a>
+            </li>
+
+            <!--最后用户图标-->
+            <li class="layui-nav-item " style="position: absolute;right: 25px;top: 8px">
+                <a href="" STYLE="margin-top: -13px;">
+                    <img class="layui-nav-img" style="margin-top: -10px;" src="//t.cn/RCzsdCq">
+                </a>
+                <dl class="layui-nav-child" style="margin-top: -15px;margin-left: -35px">
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">开通VIP</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/vip.png" th:src="@{/images/student/vip.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">机构账号绑定</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/mechanismYes.png" th:src="@{/images/student/mechanismYes.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">个人设置</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/settings.png" th:src="@{/images/student/settings.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">邀请记录</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/teacher/recode_2.png" th:src="@{/images/teacher/recode_2.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="/login"><SPAN style="margin-left: 18px">退出账户</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/exit.png" th:src="@{/images/student/exit.png}"/>
+                    </a>
+                    </dd>
+                </dl>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <div class="second">
+        <span style="color: rgba(59,61,69,1);font-size: 14px">置顶课程</span>
+        <ul class="">
+            <li class="li-kec">
+
+                <img style="width: 20px;height: 20px;left: 5px;top: 8px;margin-right: 2px" src="../static/images/student/sorting.png" th:src="@{/images/student/sorting.png}"/>
+                课程排序
+
+            </li>
+
+            <li class="li-guidang">
+                <img style="width: 20px;height: 20px;left: 5px;top: 8px;margin-right: 2px" src="../static/images/student/archive.png" th:src="@{/images/student/archive.png}"/>
+
+                归档管理
+            </li>
+            <li class="li-addkec">
+                <button class="Addbutton" id="addCourseBtn">+创建/加入课程</button>
+            </li>
+            <li class="li-addkec">
+                <button class="Addbutton" id="fast-publish">+快速发布活动</button>
+            </li>
+        </ul>
+        <hr>
+
+    </div>
+    <!--        创建/加入课程的下拉列表-->
+    <div class="Addbutton-low-div">
+        <ul>
+            <li >
+                <a class="a-creatButton">
+                    创建课程
+                </a>
+            </li>
+            <li>
+                <a class="a-Addbutton">
+                    加入课程
+                </a>
+            </li>
+        </ul>
+    </div>
+
+<!--    创建课程-->
+    <div class="StuBody1">
+
+        <div class="creatCourse-div">
+            <div class="creatCourse-div-nav">
+                <h3>新建课程
+                <i class="layui-icon close-icon" >&#x1006;</i>
+                </h3>
+            </div>
+            <form th:action="@{/creatCourse}" method="post" >
+                <div class="creatCourse-div-content" >
+                    <input name="teacherId" type="hidden" th:value="${session.users.getUserId()}">
+                    <input name="courseId" type="hidden"  class="courseId-input" >
+
+                    <div class="courseName-input-div " >
+                        <label class="courseName-input-label">课程名称:</label>
+                        <input name="courseName" class="courseName-input"  type="text" placeholder="请输入课程名称" autocomplete="off" lay-verify="title">
+                    </div>
+                    <div class="className-input-div" >
+                        <label class="courseName-input-label">班级名称:</label>
+                        <input name="courseClass" class="courseName-input"  type="text" placeholder="请输入班级名称（选填）" autocomplete="off" lay-verify="title">
+                    </div>
+                    <div class="select-term ">
+                        <span style="font-size: 14px;color: #2d2d2d;cursor: pointer;height: 60px;line-height: 60px">选择学期：</span>
+                       <select name="courseYear" class="courseYear-select" >
+                           <option value="2020-2021">2020-2021</option>
+                           <option value="2019-2020">2019-2020</option>
+                           <option value="2018-2019">2018-2019</option>
+                           <option value="2017-2018">2017-2018</option>
+
+
+                       </select>
+                        <select name="courseTerm" class="courseTerm-select ">
+                            <option value="不限">不限</option>
+                            <option value="第一学期" selected>第一学期</option>
+                            <option value="第二学期">第二学期</option>
+                        </select>
+                    </div>
+                    <span style="font-size:12px;color: #666;position: absolute;margin-top: 10px">学生必须填写下列信息才能加入课程</span>
+
+                    <div class="checkbox-div">
+                        <label><input name="stu" type="checkbox" value="自然班级" class="che" style="font-size: 14px;"/>自然班级 </label>
+                        <label><input name="stu" type="checkbox" value="年级" class="che" style="font-size: 14px;margin-left: 30px"/>年级 </label>
+                        <label><input name="stu" type="checkbox" value="入学年纪" class="che" style="font-size: 14px;margin-left: 30px"/>入学年纪 </label>
+                    </div>
+                </div>
+                <div style="width: 660px;height: 80px;background: #F5F5F5;margin-top: 15px;">
+                    <button class="creatBtn" type="submit">
+                        创建
+                    </button>
+                    <button class="creatClose-Btn">
+                        <A href="/teacher">
+                            取消
+                        </A>
+
+                    </button>
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!--    添加课程-->
+    <div class="StuBody2">
+
+        <div class="addCourse-div">
+            <div style="height: 66px;width: 295px;font-size: 18px;color: #a9a9a9;line-height: 66px;border-bottom: 1px solid #ececec;">
+                <span style="margin-left: 20px">加入课程</span>
+            </div>
+<!--            <form th:action="@{/teacher}" method="post">-->
+                <div style="width: 295px;height: 70px;line-height: 70px">
+                    <input name="studentId" type="hidden"  th:value="${session.users.getUserId()}">
+                    <input name="courseId" type="text" class="input-addCourse" placeholder="请输入课程加课验证码">
+                </div>
+
+                <button class="cancelBtn">
+                    <a href="/teacher.html">
+                        取消
+                    </a>
+
+                </button>
+
+                <button class="addBtn">
+                    <a href="/teacher">
+                        加入
+                    </a>
+
+                </button>
+<!--            </form>-->
+        </div>
+    </div>
+
+<!--    快速发布活动展开的div-->
+    <div class="StuBody3">
+        <div class="publish-div">
+            <div class="close-img">
+
+
+            </div>
+            <div class="publish-div-title-div" >
+                <p >选择要发布的类型</p>
+            </div>
+            <div class="publish-div-content">
+               <ul class="publish-content" >
+                   <li >
+                       <div class="publish-content-div1">
+                       </div>
+                       <span style="font-size: 14px;color: rgba(67,67,67,1);line-height: 35px;margin-left: 20px">
+                            公共
+                       </span>
+                   </li>
+                   <li class="publish-content-li">
+                       <div class="publish-content-div2">
+                       </div>
+                       <span style="font-size: 14px;color: rgba(67,67,67,1);line-height: 35px;margin-left: 20px">
+                            话题
+                       </span>
+                   </li>
+                   <li class="publish-content-li">
+                       <div class="publish-content-div3">
+                       </div>
+                       <span style="font-size: 14px;color: rgba(67,67,67,1);line-height: 35px;margin-left: 8px">
+                            课堂互动
+                       </span>
+                   </li>
+                   <li class="publish-content-li" id="zuoye">
+                       <div class="publish-content-div4">
+                       </div>
+                       <span style="font-size: 14px;color: rgba(67,67,67,1);line-height: 35px;margin-left: 20px">
+                                作业
+                       </span>
+                   </li>
+                   <li style="margin-left: 43px">
+                       <div class="publish-content-div5">
+                       </div>
+                       <span style="font-size: 14px;color: rgba(67,67,67,1);line-height: 35px;margin-left: 20px">
+                                测试
+                       </span>
+                   </li>
+               </ul>
+            </div>
+
+        </div>
+    </div>
+
+<!--center-->
+    <div class="center">
+<!--        显示课程-->
+        <div >
+            <dl class="dl1" th:each="teacherCourse:${session.teacherCourse}">
+
+                <!--                更多的展开区-->
+                <div class="more-div" th:id="${teacherCourse.getCourseId()}">
+                    <ul >
+
+                        <li >
+                            <div id="edit" th:class="${teacherCourse.getCourseId()}">
+                                <a class="edit" th:id="${teacherCourse.getCourseId()}">编辑</a>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="delete-li">删除</div>
+                        </li>
+                        <li>
+                            <div>归档</div>
+                        </li>
+                        <li>
+                            <div>复制课程</div>
+                        </li>
+                        <li>
+                            <div>打包下载</div>
+                        </li>
+                        <li>
+                            <div>转让</div>
+                        </li>
+
+                    </ul>
+                </div>
+<!--                ++++++++++++++++++++++++++++++    -->
+
+                <dt class="dt1">
+
+                    <a class="a1" th:text="${teacherCourse.getCourseName()}">
+                        <!--                       NET架构与程序设计-->
+                    </a>
+                    <div class="class-div">
+                        <p class="p1" th:text="${teacherCourse.getCourseClass()}">
+                            <!--                        软工917级1-2班-->
+                        </p>
+                        <p class="p1-1">
+                            <img style="height: 20px;width: 20px;margin-top: 3px" src="../static/images/course/qr-code.png" th:src="@{/images/course/qr-code.png}"/>
+                            <span style="font-size: 12px;color: white;margin-top: 3px">加课码:
+                            <span th:text="${teacherCourse.getCourseId()}"></span>
+                                <!--                            GLGXX6-->
+                        </span>
+                        </p>
+                    </div>
+
+                    <span style="float: right;color:#bbbbbb;font-size: 13px;margin-top: 70px;margin-right: 15px">
+                        <span th:text="${teacherCourse.getCourseYear()}">
+
+                        </span>
+                        <!--                        2019-2020-->
+                        <br>
+                        <span th:text="${teacherCourse.getCourseTerm()}">
+
+                        </span>
+                        <!--                        第二学期-->
+                    </span>
+                </dt>
+                <dd class="dd1">
+                    <span class="ul-span">近期作业</span>
+                    <div style="width: 270px;height: 100px;margin-top: 30px;position: absolute">
+                        <ul th:each="teacherCourseHomework:${session.teacherCourseHomeWork}">
+                            <li th:if="${teacherCourse.getCourseId()} eq ${teacherCourseHomework.getCourseId()}">
+                                <a th:href="@{/teacherLook(homeworkId=${teacherCourseHomework.getHomeworkId()})}" th:text="${teacherCourseHomework.getHomeworkName()}">
+                                    <!--                                作业-->
+                                </a>
+                                <br>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </dd>
+
+                <!--                最下面更多那点-->
+                <div class="ddfoot">
+                    <SPAN style="float: left;font-size: 12px;color: rgba(95,99,104,1);margin-top: 10px;margin-left: 2px" th:each="selectCount:${session.selectCounts}">
+                        <span th:switch="${teacherCourse.getCourseId()} eq ${selectCount.getCourseId()}">
+                            <span th:case="true">
+                                成员
+                                <span th:text="${selectCount.getCount()}"></span>
+                                人
+                            </span>
+                        </span>
+
+                        <!--                     学生选了此课的人数-->
+                    </SPAN>
+                    <span style="float: right;font-size: 12px;color: #2C58AB;margin-top: 10px;margin-right: 10px;cursor: pointer"  th:id="mo+${teacherCourse.getCourseId()}" class="more-span" >
+                        更多
+                        <img style="height: 17px;width: 10px" src="../static/images/course/more-vertical.png" th:src="@{/images/course/more-vertical.png}"/>
+                    </span>
+                    <sapn style="float: right;font-size: 12px;color: rgba(95,99,104,1);margin-top: 10px;margin-right:20px;cursor: pointer"> 取消置顶</sapn>
+
+
+                </div>
+
+<!--                ==============================================================================================-->
+
+            </dl>
+
+        </div>
+
+        <!--    编辑课程-->
+        <div class="StuBody4">
+
+            <div class="creatCourse-div">
+                <div class="creatCourse-div-nav">
+                    <h3 ><span style="float: left">编辑课程</span>
+                       <span class="close-edit"> <i class="layui-icon close-icon" >&#x1006;</i></span>
+                    </h3>
+                </div>
+                <form  th:action="@{/editCourse}" method="post">
+                    <div class="creatCourse-div-content" >
+                        <input name="teacherId" type="hidden" th:value="${session.users.getUserId()}">
+                        <input name="courseId" type="hidden"  class="courseId-input"  >
+
+                        <div class="courseName-input-div " >
+                            <label class="courseName-input-label">课程名称:</label>
+                            <input  name="courseName" class="courseName-input"   type="text" placeholder="请输入课程名称" autocomplete="off" lay-verify="title">
+                        </div>
+                        <div class="className-input-div" >
+                            <label class="courseName-input-label">班级名称:</label>
+                            <input name="courseClass" class="courseName-input"  type="text" placeholder="请输入班级名称（选填）" autocomplete="off" lay-verify="title">
+                        </div>
+                        <div class="select-term ">
+                            <span style="font-size: 14px;color: #2d2d2d;cursor: pointer;height: 60px;line-height: 60px">选择学期：</span>
+                            <select name="courseYear" class="courseYear-select" >
+                                <option value="2020-2021">2020-2021</option>
+                                <option value="2019-2020">2019-2020</option>
+                                <option value="2018-2019">2018-2019</option>
+                                <option value="2017-2018">2017-2018</option>
+                            </select>
+                            <select name="courseTerm" class="courseTerm-select ">
+                                <option value="不限">不限</option>
+                                <option value="第一学期" selected>第一学期</option>
+                                <option value="第二学期">第二学期</option>
+                            </select>
+                        </div>
+                        <span style="font-size:12px;color: #666;position: absolute;margin-top: 10px">学生必须填写下列信息才能加入课程</span>
+
+                        <div class="checkbox-div">
+                            <label><input name="stu" type="checkbox" value="自然班级" class="che" style="font-size: 14px;"/>自然班级 </label>
+                            <label><input name="stu" type="checkbox" value="年级" class="che" style="font-size: 14px;margin-left: 30px"/>年级 </label>
+                            <label><input name="stu" type="checkbox" value="入学年纪" class="che" style="font-size: 14px;margin-left: 30px"/>入学年纪 </label>
+                        </div>
+                    </div>
+                    <div style="width: 660px;height: 80px;background: #F5F5F5;margin-top: 15px;">
+                        <button class="creatBtn" type="submit" style="cursor: pointer">
+                            确定
+                        </button>
+                        <span class="creatClose-Btn" id="cancel-edit">
+                            取消
+                        </span>
+
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+<!--        删除确认界面-->
+        <div class="delete-div">
+            <div class="delete-div2">
+                <span class="title-span">
+                    确定要删除么？
+                </span>
+                <span class="remind-span">
+                    好吧，删除后无法撤销哟！
+                </span>
+                <div class="btn-div">
+                    <form th:action="@{/deleteCourse}" method="post">
+                        <input name="teacherId" type="hidden" th:value="${session.users.getUserId()}">
+                        <input name="courseId" type="hidden" class="deleteCourseId" >
+                        <button class="addBtn-deletediv" type="submit">
+                            确定
+                        </button>
+                        <div class="cancelBtn-deletediv" id="cancelDelete">
+                            取消
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    发布个人作业-->
+    <div>
+        <div class="StuBody5">
+            <div class="assignHomework-div">
+                <div class="assignHomework-nav">
+                    <span>
+                         <img class="publish-img" src="../static/images/teacher/publish.png" th:src="@{/images/teacher/publish.png}"/>
+                        <span class="publish-hw-title">
+                            发布个人作业
+                        </span>
+                    </span>
+                    <img class="publish-guanbi-img" src="../static/images/teacher/guanbi.png" th:src="@{/images/teacher/guanbi.png}"/>
+                </div>
+
+                <form class="layui-form" th:action="@{/publishHomework}" method="post">
+    <!--                //作业from块-->
+                    <div class="homeWork-from-div">
+                        <input name="teacherId" type="hidden" th:value="${session.users.getUserId()}">
+                        <input name="homeworkId" class="homeworkId" type="hidden" >
+                        <input name="publishDate" class="publishDate" type="hidden" >
+                        <input name="homeworkName" class="homeWork-name" type="text" placeholder="作业名称">
+
+    <!--                    富文本框-->
+                        <div class="layui-form-item layui-form-text " style="margin-left: -110px;margin-top: 20px">
+                            <div class="layui-input-block ">
+                                <textarea class="layui-textarea layui-hide "  name="homeworkIntroduction" lay-verify="content" id="LAY_demo_editor" placeholder="作业简介，作业格式等要求，温馨提示：word,pdf,txt等文字性文档，都可以进行查重"></textarea>
+                            </div>
+                        </div>
+
+
+    <!--                    截至时间-->
+                        <div class="layui-form" style="margin-left: -25px">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">截至日期：</label>
+                                    <div class="layui-input-inline">
+                                        <input name="deadline" class="layui-input" id="test-limit2" style="width: 302px" type="text"  placeholder="请选择日期">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+    <!--                    满分值-->
+                        <div style="margin-left: -25px">
+                            <label class="layui-form-label">满分值：</label>
+                            <input name="maxScore" class="layui-input"  style="width: 302px" type="text"  placeholder="请填写数值">
+                        </div>
+                    <!--是否查重开关-->
+                        <div class="layui-form-item" style="margin-left: -30px;margin-top: 20px">
+                            <label class="layui-form-label">是否查重:</label>
+                            <div class="layui-input-block">
+                                <input class="isCheck " name="open" type="checkbox" checked="" lay-filter="switchTest" lay-skin="switch" lay-text="是|否">
+                            </div>
+
+<!--                            查重警戒值-->
+                            <div class="jiexian" style="position: absolute;margin-left: 190px;margin-top: -38px">
+                                <label style="color: #A0A0A0;font-size: 14px">查重警戒值：</label>
+                                <input style="width: 35px;height: 38px;border-radius: 4px;border: 1px solid #D2D2D2;padding: 0 10px;text-align: center" value="50">%
+                            </div>
+<!--                            设置查重率多少打回-->
+                            <div class="dahui" style="position: absolute;margin-top: 20px">
+                                <div class="layui-input-block">
+                                    <input name="like1[write]" title="查重率高于" type="checkbox" checked="" lay-skin="primary">
+                                </div>
+                                <input style="width: 35px;height: 38px;border-radius: 4px;border: 1px solid #D2D2D2;padding: 0 10px;text-align: center;position: absolute;margin-left: 220px;margin-top: -37px" value="50">
+                                <span style="margin-left: 280px;float: right;margin-top: -27px">%自动打回</span>
+                            </div>
+                        </div>
+
+
+                        <button class="daoHm-btn">
+                            <img src="../static/images/teacher/import.png" th:src="@{/images/teacher/import.png}"/>
+                            导入作业
+                        </button>
+                        <!--选择要发布作业的课程-->
+                        <div class="publishHm-select-div">
+                            <span style="font-size: 18px;font-family: PingFangSC-Medium;font-weight: 500;color: black">
+                                发布作业对象
+                            </span>
+                            <div class="layui-inline">
+                                <div class="layui-input-inline" style="width: 680px">
+                                    <select name="courseId" lay-search="" lay-verify="required" >
+
+                                        <option disabled selected hidden >请选择</option>
+
+                                        <option th:each="teacherCourse:${session.teacherCourse}" th:value="${teacherCourse.getCourseId()}" th:text="${teacherCourse.getCourseName()}"></option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                      <div  style="position: absolute;margin-top: 220px;">
+                          <div  class="quxiao">
+                              取消
+                          </div>
+
+                          <button class="qued" type="submit">
+                              确定
+                          </button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../resource/layui/css/layui.css">
+
+    <link rel="stylesheet" href="../static/css/register.css" th:href="@{/css/register.css}">
+    <script th:href="@{/js/register.js}" href="../static/js/register.js" ></script>
+    <script src="../static/jq/jquery-1.12.4.min.js" th:src="@{/jq/jquery-1.12.4.min.js}"></script>
+
+
+</head>
+<body class="registerBody">
+<!--    注册选择学生老师板块-->
+    <div class="register_main">
+<!--        进入初始选择界面-->
+        <div class="register_init">
+            <p class="registerId_title">注册账号</p>
+            <p CLASS="p_titleB">请选择你在日常教学中的实际身份</p>
+
+            <div class="register_teacher">
+                <img src="../static/images/student.png" th:src="@{/images/student.png}"/>
+                <button class="register_teacher_and_student_button" id="teacher_btn">我是老师/助教</button>
+            </div>
+            <div class="register_student">
+                <img src="../static/images/student.png" th:src="@{/images/student.png}"/>
+                <button class="register_teacher_and_student_button" id="student_btn">我是学生</button>
+            </div>
+
+            <BUTTON class="register_btn" >
+                <a href="/login">
+                    <p style="float: right">
+                        <span style="color: #CEBCB3">已有账号？</span>
+                        <span STYLE="color: #32C1F4">去登陆</span>
+                    </p>
+                </a>
+            </BUTTON>
+        </div>
+    </div>
+
+<!--teacher注册页面-->
+    <div class="teacher">
+        <div class="title_t">
+            <div class="img_return">
+                <img type="button" src="../static/images/returnReg.png" th:src="@{/images/returnReg.png}" />
+            </div>
+            <div class="text" >
+                老师/助教注册
+            </div>
+<!--            注册from-->
+            <div class="from_s">
+                <form th:action="@{/register1}" method="post">
+                    <input name="userId" class="userName" type="text" autocomplete="off" placeholder="邮箱/手机号" >
+                    <p class="userName_er" id="phone_er">邮箱或手机号格式错误</p>
+                    <input name="userPassword" id="password" class="password" type="password" autocomplete="off" placeholder="密码" >
+                    <p class="userName_er" id="pass_er">密码长度要大于6位，由数字和字母组成</p>
+                    <input  class="password" id="passwordA" type="password" autocomplete="off" placeholder="再次输入密码" >
+                    <p class="userName_er" id="pass_ag_er">密码不不一致</p>
+                    <input name="userName" class="password" type="text" autocomplete="off" placeholder="姓名" >
+                    <p class="userName_er" id="name_er">姓名不能为空</p>
+                    <input name="userSchool" class="password" type="text" autocomplete="off" placeholder="学校" >
+                    <p class="userName_er"id="school_er">学校不能为空</p>
+                    <input name="userRole" type="hidden" value="老师">
+                    <input  class="code" type="text" autocomplete="off" placeholder="验证码" >
+                    <img id="loginValidateCode"  src="/loginValidateCode" onclick="uploadLoginValidateCode();">
+                    <p class="code_er" style="display: block"></p>
+<!--                    <p class="userName_er">验证码不能为空</p>-->
+
+                    <input class="teacher_register_btn" type="submit" value="注册为老师/助教">
+                    <BUTTON class="register_btn" >
+                        <a href="/login">
+                            <p style="float: right">
+                                <span style="color: #CEBCB3">已有账号？</span>
+                                <span STYLE="color: #32C1F4">去登陆</span>
+                            </p>
+                        </a>
+
+                    </BUTTON>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+
+<!--student注册页面-->
+    <div class="student" >
+        <div class="title_t">
+            <div class="img_return">
+                <img type="button" src="../static/images/returnReg.png" th:src="@{/images/returnReg.png}"/>
+            </div>
+            <div class="text" >
+                学生注册
+            </div>
+            <!--            注册from-->
+            <div class="from_s">
+                <form th:action="@{/register1}" method="post">
+                    <input name="userId" class="userName" type="text" autocomplete="off" placeholder="邮箱/手机号" >
+                    <p class="userName_er" id="phone2_er" >邮箱或手机号格式错误</p>
+                    <input name="userPassword" class="password" type="password" autocomplete="off" placeholder="密码" >
+                    <p class="userName_er" id="pass2_er">密码不能小于6位</p>
+                    <input  class="password" type="password" autocomplete="off" placeholder="再次输入密码" >
+                    <p class="userName_er" id="pass_ag2_er">密码不不一致</p>
+                    <input name="userName" class="password" type="text" autocomplete="off" placeholder="姓名" >
+                    <p class="userName_er" id="name2_er">姓名不能为空</p>
+                    <input name="studentNumber" class="password" type="text" autocomplete="off" placeholder="学号" >
+                    <p class="userName_er" id="stuid_er">学号不能为空</p>
+                    <input name="userSchool" class="password" type="text" autocomplete="off" placeholder="学校" >
+                    <p class="userName_er" id="school2_er">学校不能为空</p>
+                    <input name="userRole" type="hidden" value="学生">
+                    <input name="validateCode" id="validateCode"   class="code" type="text" autocomplete="off" placeholder="验证码" >
+                    <img id="loginValidateCode"  src="/loginValidateCode" onclick="uploadLoginValidateCode();">
+                    <p class="code_er" style="display: block"></p>
+
+                    <input class="teacher_register_btn" type="submit" value="注册为学生">
+                    <BUTTON class="register_btn" >
+                        <a href="/login">
+                            <p style="float: right">
+                                <span style="color: #CEBCB3">已有账号？</span>
+                                <span STYLE="color: #32C1F4">去登陆</span>
+                            </p>
+                        </a>
+
+                    </BUTTON>
+                </form>
+            </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        //验证手机/邮箱格式
+        var pNumber = /^1[3458]\d{9}$/;
+        var eM = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        $(".userName").focus();//默认获取焦点
+        $(".userName").blur(function () {
+
+            if(pNumber.test($(".userName").val()) || eM.test($(".userName").val()) ){
+                $("#phone_er").css("display","none")
+            }else {
+                $("#phone_er").css("display","block")
+            }
+            if ($(".userName").val()=="" || $(".userName").val()==null){
+                $("#phone_er").text("邮箱/手机号不能为空").css("display","block")
+            }
+        });
+
+        //验证teacher密码
+        var password_reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+        $(".password").blur(function () {
+            if (!password_reg.test( $(".password").val())){
+                $("#pass_er").text("密码长度要大于6位，由数字和字母组成").css("display","block")
+            } else if (password_reg.test( $(".password").val())){
+                $("#pass_er").css("display","none")
+            }
+            if ($(".password").val()=="" || $(".password").val()==null){
+                $("#pass_er").text("密码不能为空").css("display","block")
+            }
+        });
+        //验证两次密码是否一致
+        $("#passwordA").blur(function () {
+            if ($("#password").val()!=$("#passwordA").val()){
+                $("#pass_ag_er").css("display","block")
+            }else if ($("#passwordA").val()=="" || $("#passwordA").val()==null){
+                $("#pass_ag_er").text("不能为空").css("display","block")
+            }else {
+                $("#pass_ag_er").css("display","none")
+            }
+        });
+
+        //生成验证码
+        $("#validateCode").keyup(function(){
+            checkLoginValidateCode($(this).val());
+        });
+        $("#validateCode").blur(function () {
+            checkLoginValidateCode($(this).val());
+        })
+    });
+    function uploadLoginValidateCode() {
+        $("#loginValidateCode").attr("src","/loginValidateCode?random="+new Date().getMilliseconds());
+    }
+    function checkLoginValidateCode(validateCode) {
+        var error = $("#validateCode").parent().next();
+        if($("#validateCode").val() != null && $("#validateCode").val() != ""){
+            $.ajax({
+                type: "POST",
+                async:false,
+                url: "/checkLoginValidateCode?validateCode="+validateCode,
+                success : function(json) {
+                    if(json != null && json.code == 200 && json.status != null) {
+                        if (json.status == true) {
+                            error.html("恭喜你验证码，正确！！！！！");
+                        } else if(json.status == false){
+                            error.html("验证码错误，请重新输入");
+                        }else{
+                            error.html("验证码过期，请重新输入");
+                            uploadLoginValidateCode();
+                        }
+                    }
+                    return false;
+                },
+                error:function(XMLHttpRequest,textStatus,errorThrown){
+                    alert("服务器错误！状态码："+XMLHttpRequest.status);
+                    // 状态
+                    console.log(XMLHttpRequest.readyState);
+                    // 错误信息
+                    console.log(textStatus);
+                    return false;
+                }
+            });
+        }else{
+            error.html("请输入验证码！");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 点击我是老师显示出老师注册页面
+    $("#teacher_btn").click(function(){
+        $(".register_main").css("display","none");
+        $(".teacher").css("display","block");
+    });
+    // 点击我是老师显示出老师注册页面
+    $("#student_btn").click(function(){
+        $(".register_main").css("display","none");
+        $(".student").css("display","block");
+    });
+
+    $(".img_return").click(function () {
+        $(".register_main").css("display","block");
+        $(".teacher").css("display","none");
+        $(".student").css("display","none");
+
+    });
+
+
+</script>
+</body>
+</html>

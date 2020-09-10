@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wmm.ketangpai.dao.CourseDao">
+
+    <!--学生通过课程号添加课程-->
+    <insert id="saveCourse" parameterType="Stucourse">
+        insert into stucourse values (#{studentId},#{courseId},0)
+    </insert>
+<!--    &lt;!&ndash;老师通过课程号添加课程&ndash;&gt;-->
+<!--    <insert id="saveCourseT" parameterType="TeacherCourse">-->
+<!--        insert into teacourse values (#{studentId},#{courseId},"")-->
+<!--    </insert>-->
+
+<!--    //学生退课-->
+    <delete id="cancelCourse" parameterType="Stucourse">
+        delete from stucourse where studentId=#{studentId} and courseId=#{courseId};
+    </delete>
+
+<!--    //学生通过作业号在提交作业页面查看作业信息-->
+<select id="lookCourseInfo" parameterType="Course" resultType="Course">
+    SELECT * from homework,couhomework,course where homework.homeworkId=couhomework.homeworkId
+                                                and couhomework.courseId=course.courseId and homework.homeworkId=#{homeworkId};
+</select>
+
+    <!--    学生提交作业-->
+    <insert id="sendHomework" parameterType="StuHomework">
+        insert into stuhomework values (#{studentId},#{homeworkId},#{submitDate},#{message},'',1,'',#{path});
+    </insert>
+
+<!--    //学生在提交作业页面查看是否已经提交作业-->
+   <select id="lookHomework" parameterType="StuHomeworkDis" resultType="StuHomeworkDis">
+       select * from stuhomework where homeworkId=#{homeworkId} and studentId=#{studentId}
+   </select>
+
+<!--    通过老师ID查询该老师的所有课程-->
+    <select id="findTeacherCourse" resultType="com.wmm.ketangpai.entity.Course">
+        select * from teacourse,course where teacourse.courseId=course.courseId and teacherId=#{teacherId}
+    </select>
+    <!--    通过老师ID查询该老师的所有课程查询老师的所有课的作业-->
+    <select id="findTeacherCourseHomework" resultType="com.wmm.ketangpai.entity.Course">
+        select * from teacourse,course,homework,couhomework where teacourse.courseId=course.courseId and homework.homeworkId=couhomework.homeworkId
+                                                              and couhomework.courseId=course.courseId and teacherId=#{teacherId}
+    </select>
+<!--    //查询所选该老师课的人数-->
+    <select id="selectCount" resultType="com.wmm.ketangpai.entity.CourseSelectCount">
+        SELECT count(*) AS count,courseId from stucourse GROUP BY courseId;
+    </select>
+
+<!--    老师创建课程-->
+    <insert id="creatCourse" parameterType="Course">
+        insert into course values (#{courseId},#{courseName},#{courseClass},#{courseYear},#{courseTerm},0,0)
+    </insert>
+    <insert id="insertTeacherCourse" parameterType="TeacherCourse">
+        insert into teacourse values (#{teacherId},#{courseId},'已创建');
+    </insert>
+
+<!--    编辑课程-->
+    <select id="findCourseInfo" resultType="Course">
+        select courseId,courseName,courseClass,courseYear,courseTerm from course where courseId=#{courseId}
+    </select>
+    <update id="editCourse" parameterType="Course">
+        update course set courseName=#{courseName},courseClass=#{courseClass},courseYear=#{courseYear},courseTerm=#{courseTerm}
+                where courseId=#{courseId}
+    </update>
+
+<!--    老师删除课程-->
+    <delete id="deleteCourse" parameterType="String">
+        delete from course where courseId=#{courseId};
+    </delete>
+    <delete id="deleteCourseFromTeacher" parameterType="String">
+        delete from teacourse where courseId=#{courseId};
+    </delete>
+
+<!--    老师为课程发布作业-->
+    <insert id="publishHomework" parameterType="Course">
+        insert into homework values (#{homeworkId},#{publishDate},#{homeworkName},#{homeworkIntroduction},#{deadline},#{maxScore},0);
+    </insert>
+    <insert id="insertCouHomework" parameterType="Course">
+        insert into couhomework values (#{courseId},#{homeworkId},'未交',0,0);
+    </insert>
+
+
+
+<!--    老师点击课程作业查询所有学生的提交情况-->
+    <select id="selectCj" parameterType="CjInfo" resultType="CjInfo">
+        SELECT course.courseName,homework.homeworkName,homework.deadline,course.courseId  FROM course,couhomework,homework
+        WHERE course.courseId=couhomework.courseId
+          and couhomework.homeworkId=homework.homeworkId
+          AND  couhomework.homeworkId=#{homeworkId}
+    </select>
+
+    <!--    //在老师批改作业页面对学生的作业进行展示-->
+    <select id="StuHomeworkDis" parameterType="StuHomeworkDis" resultType="StuHomeworkDis">
+        select  *
+        from students,stuhomework where stuhomework.studentId=students.studentId and stuhomework.homeworkId=#{homeworkId}
+    </select>
+
+<!--    查询选这门课有多少人-->
+    <select id="personCount" parameterType="StuHomeworkDis" resultType="StuHomeworkDis">
+        select  COUNT(*) as personCount
+        from students,stuhomework where stuhomework.studentId=students.studentId and stuhomework.homeworkId=#{homeworkId}
+    </select>
+
+<!--    修改分数-->
+    <update id="updateScore" parameterType="StuHomeworkDis">
+        update stuhomework set score=#{score} where homeworkId=#{homeworkId} and studentId=#{studentId}
+    </update>
+</mapper>

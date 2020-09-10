@@ -1,0 +1,27 @@
+.nav-div{border-bottom:3px solid #EDEDED;height: 70px;}
+.courseTitle-div{height: 70px;line-height: 70px;margin-left: 30px;font-size: 16px;}
+.courseTitle-span{height: 32px;line-height: 32px;background: #2c58ab;margin-left: 10px;display: inline-block;border-radius: 16px;padding: 0 10px;color: white;cursor:pointer}
+.nav{margin-left: 560px;border-bottom:3px solid #EDEDED;height: 56px;margin-top: -53px}
+
+.center-div{width: 1224px;margin-left: auto;margin-right: auto;margin-top: 40px;}
+.empty-div{width: 1176px;height: 1px;border-radius: 8px;border: 1px solid rgba(218,220,224,1);padding: 24px;margin-left: auto;margin-right: auto;}
+
+.homeWorkTro-div{margin-top: 20px}
+.homeWork-title{font-size: 18px;color: #2d2d2d;}
+.homeWork{font-size: 13px;font-family: "宋体";color: #707070;margin-top: 8px}
+.some-p{margin-top: 20px}
+
+.refer-btn{background-color: rgba(50,186,240,.5);height:40px;width: 104px;border: none;outline: none;border-radius:5px;color: #ffffff}
+
+
+.dfoot-div{border-top: 1px solid #dcdcdc;border-radius: 0 0 8px 8px;line-height: 30px;padding: 24px 0;font-size: 0;cursor: text;width: 1224px;height: 26.6px;background-color: #F1F2F3;overflow:hidden}
+.dfoot-div-pw{font-size: 14px;width: 100px;padding-right: 35px;text-align: right;color: #010000;float: left;}
+.dfoot-div-sp{float: left;font-size: 14px;color: #818181;width: 685px;word-break: break-all; word-wrap: break-word;}
+
+.delete-btn{float: right;color: #32baf0;font-size: 14px;margin-right: 10px;margin-top: 10px;cursor: pointer}
+
+
+
+
+
+

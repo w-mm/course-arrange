@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>student</title>
+
+    <link rel="stylesheet" href="../static/layui/css/layui2.css" th:href="@{/layui/css/layui2.css}">
+    <script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+
+    <script src="../static/jq/jquery-1.12.4.min.js" th:src="@{/jq/jquery-1.12.4.min.js}"></script>
+    <script src="../static/js/student.js" th:src="@{/js/student.js}"></script>
+    <link rel="stylesheet" href="../static/css/student.css" th:href="@{/css/student.css}">
+<body>
+    <div class="nav-div">
+    <!--    log图标-->
+        <a href="/student" style="border: none">
+            <img style="height:24px;width: 96px;margin-left: 67px;margin-bottom: -58px;border: none" src="../static/images/student/logo-mainblue.png" th:src="@{/images/student/logo-mainblue.png}"/>
+        </a>
+        <ul class="layui-nav nav" >
+    <!--        课堂-->
+            <li class="layui-nav-item layui-this" >
+                <a href="" STYLE="color: #3B3D45;font-size: 16px;margin-top: -5px;">课堂</a>
+            </li>
+    <!--        精品慕课-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">精品慕课</a>
+            </li>
+    <!--        我的精品-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">我的精品</a>
+            </li>
+    <!--        双选会-->
+            <li class="layui-nav-item ">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">双选会</a>
+            </li>
+    <!--        论文管理-->
+            <li class="layui-nav-item ">
+                <div style="height: 60px;width: 120px;position: relative">
+
+                    <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">论文管理</a>
+                    <img style="width: 21px;height: 10px;position:absolute;top: 10px;right: 15px" src="../static/images/1.png" th:src="@{/images/1.png}"/>
+                </div>
+            </li>
+    <!--        工具-->
+            <li class="layui-nav-item " style="position: absolute;right: 130px;top: 8px">
+                <div style="height: 60px;width: 120px;position: relative;">
+                    <a href="" STYLE="color: #5F6368;margin-top: -13px;font-size: 16px;margin-left: 25px">工具</a>
+                    <img style="width: 27px;height: 27px;position:absolute;top: 15px;left: 15px" src="../static/images/student/tool_icon.png" th:src="@{/images/student/tool_icon.png}"/>
+                </div>
+                <dl class="layui-nav-child" style="margin-top: -15px">
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 10px">论文查重</SPAN>
+                        <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/paperrepeaticon.png" th:src="@{/images/student/paperrepeaticon.png}"/>
+                        </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 10px">学术查证</SPAN>
+                        <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/sjczicon.png" th:src="@{/images/student/sjczicon.png}"/>
+                    </a>
+                    </dd>
+                </dl>
+            </li>
+            <!--铃铛图标-->
+            <li class="layui-nav-item " style="position: absolute;right: 95px;top: 0px">
+                <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">
+                    <img class="layui-nav-img" style="margin-top: -10px;" src="../static/images/student/lingd.png" th:src="@{/images/student/lingd.png}">
+                </a>
+            </li>
+
+    <!--最后用户图标-->
+            <li class="layui-nav-item " style="position: absolute;right: 45px;top: 8px">
+                <a href="" STYLE="margin-top: -13px;">
+                    <img class="layui-nav-img" style="margin-top: -10px;" src="//t.cn/RCzsdCq">
+                </a>
+                <dl class="layui-nav-child" style="margin-top: -15px;margin-left: -35px">
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">开通VIP</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/vip.png" th:src="@{/images/student/vip.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">机构账号绑定</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/mechanismYes.png" th:src="@{/images/student/mechanismYes.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="javascript:;"><SPAN style="margin-left: 18px">个人设置</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/settings.png" th:src="@{/images/student/settings.png}"/>
+                    </a>
+                    </dd>
+                    <dd><a href="/login"><SPAN style="margin-left: 18px">退出账户</SPAN>
+                        <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/exit.png" th:src="@{/images/student/exit.png}"/>
+                    </a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="second">
+        <span style="color: rgba(59,61,69,1);font-size: 14px">置顶课程</span>
+        <ul class="">
+            <li class="li-kec">
+
+                <img style="width: 20px;height: 20px;left: 5px;top: 8px;margin-right: 2px" src="../static/images/student/sorting.png" th:src="@{/images/student/sorting.png}"/>
+                课程排序
+
+            </li>
+
+            <li class="li-guidang">
+                <img style="width: 20px;height: 20px;left: 5px;top: 8px;margin-right: 2px" src="../static/images/student/archive.png" th:src="@{/images/student/archive.png}"/>
+
+                归档管理
+            </li>
+            <li class="li-addkec">
+                <button class="Addbutton">+加入课程</button>
+            </li>
+        </ul>
+        <hr>
+    </div>
+    <div class="center">
+
+        <div >
+            <dl class="dl1" th:each="studentCourse:${session.studentCourse}">
+
+                <ul class="cancelCourse" th:id="${studentCourse.getCourseId()}">
+                    <li>
+                        <a th:href="@{cancelCourse(studentId=${session.users.getUserId()},courseId=${studentCourse.getCourseId()})}">
+                            退课
+                        </a>
+
+                    </li>
+                    <li>归档</li>
+                </ul>
+
+                <dt class="dt1">
+
+                    <a class="a1" th:text="${studentCourse.getCourseName()}">
+<!--                       NET架构与程序设计-->
+                    </a>
+                    <div class="class-div">
+                        <p class="p1" th:text="${studentCourse.getCourseClass()}">
+                            <!--                        软工917级1-2班-->
+                        </p>
+                        <p class="p1-1">
+                            <img style="height: 20px;width: 20px;margin-top: 3px" src="../static/images/course/qr-code.png" th:src="@{/images/course/qr-code.png}"/>
+                            <span style="font-size: 12px;color: white;margin-top: 3px">加课码:
+                            <span th:text="${studentCourse.getCourseId()}"></span>
+                                <!--                            GLGXX6-->
+                        </span>
+                        </p>
+                    </div>
+
+                    <span style="float: right;color:#bbbbbb;font-size: 13px;margin-top: 70px;margin-right: 15px">
+                        <span th:text="${studentCourse.getCourseYear()}">
+
+                        </span>
+<!--                        2019-2020-->
+                        <br>
+                        <span th:text="${studentCourse.getCourseTerm()}">
+
+                        </span>
+<!--                        第二学期-->
+                    </span>
+                </dt>
+
+                <dd class="dd1">
+
+                    <span class="ul-span">近期作业</span>
+                    <div style="width: 270px;height: 100px;margin-top: 30px;position: absolute">
+                        <ul th:each="studentCourseHomework:${session.studentCourseHome}">
+                            <li th:if="${studentCourse.getCourseId()} eq ${studentCourseHomework.getCourseId()}">
+                                <a th:href="@{/referHk(homeworkId=${studentCourseHomework.getHomeworkId()},studentId=${session.users.getUserId()})}" th:text="${studentCourseHomework.getHomeworkName()}">
+                                    <!--                                作业-->
+                                </a>
+                                <br>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </dd>
+
+<!--                最下面更多那点-->
+                <div class="ddfoot">
+                    <SPAN style="float: left;font-size: 12px;color: rgba(95,99,104,1);margin-top: 10px;margin-left: 10px">
+                        <span th:text="${studentCourse.getTeacherName()}"></span>
+<!--                        teacher-->
+                    </SPAN>
+                    <span class="gd" th:id="${studentCourse.getCourseId()}" style="float: right;font-size: 12px;color: #2C58AB;margin-top: 10px;margin-right: 10px;cursor: pointer">
+                        更多
+                        <img style="height: 17px;width: 10px" src="../static/images/course/more-vertical.png" th:src="@{/images/course/more-vertical.png}"/>
+                    </span>
+                    <sapn style="float: right;font-size: 12px;color: rgba(95,99,104,1);margin-top: 10px;margin-right:20px;cursor: pointer"> 取消置顶</sapn>
+                </div>
+
+            </dl>
+
+        </div>
+
+    </div>
+
+    <!--    添加课程-->
+    <div class="StuBody2">
+        <div class="addCourse-div">
+            <div style="height: 66px;width: 295px;font-size: 18px;color: #a9a9a9;line-height: 66px;border-bottom: 1px solid #ececec;">
+                <span style="margin-left: 20px">加入课程</span>
+            </div>
+            <form th:action="@{/saveCourse}" method="post">
+                <div style="width: 295px;height: 70px;line-height: 70px">
+<!--                    <input value="2324234">-->
+<!--                    <input th:value="${session.users.getUserId()}">-->
+                    <input name="studentId" type="hidden"  th:value="${session.users.getUserId()}">
+                    <input name="courseId" type="text" class="input-addCourse" placeholder="请输入课程加课验证码">
+                </div>
+
+                <button class="cancelBtn">
+                    <a href="/student">
+                        取消
+                    </a>
+
+                </button>
+
+                <button class="addBtn" type="submit">
+                    加入
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

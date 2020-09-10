@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>老师查看作业</title>
+
+    <link rel="stylesheet" href="../static/layui/css/layui2.css" th:href="@{/layui/css/layui2.css}">
+    <script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+
+    <script src="../static/jq/jquery-1.12.4.min.js" th:src="@{/jq/jquery-1.12.4.min.js}"></script>
+    <script src="../static/js/teacherLh.js" th:src="@{/js/teacherLh.js}"></script>
+    <link rel="stylesheet" href="../static/css/teacherLh.css" th:href="@{/css/teacherLh.css}">
+</head>
+<body >
+<!--nav-->
+    <div class="nav-div">
+    <!--    log图标-->
+    <a href="/teacher" style="border: none">
+        <div class="courseTitle-div">
+            <img style="width: 20px;height: 18px" src="../static/images/student/fanhui.png" th:src="@{/images/student/fanhui.png}" />
+            <span class="courseTitle-span" th:each="cjInfos:${session.cjInfos}" th:text="${cjInfos.getCourseName()}"></span>
+        </div>
+
+    </a>
+    <ul class="layui-nav nav" >
+        <!--        提交作业-->
+        <li class="layui-nav-item layui-this" >
+            <a href="" STYLE="color: #3B3D45;font-size: 16px;margin-top: -5px;">学生作业</a>
+        </li>
+        <!--        作业讨论-->
+        <li class="layui-nav-item ">
+            <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">作业讨论</a>
+        </li>
+
+        <!--        工具-->
+        <li class="layui-nav-item " style="position: absolute;right: 130px;top: 8px">
+            <div style="height: 60px;width: 120px;position: relative;">
+                <a href="" STYLE="color: #5F6368;margin-top: -13px;font-size: 16px;margin-left: 25px">工具</a>
+                <img style="width: 27px;height: 27px;position:absolute;top: 15px;left: 15px" src="../static/images/student/tool_icon.png" th:src="@{/images/student/tool_icon.png}"/>
+            </div>
+            <dl class="layui-nav-child" style="margin-top: -15px">
+                <dd><a href="javascript:;"><SPAN style="margin-left: 10px">论文查重</SPAN>
+                    <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/paperrepeaticon.png" th:src="@{/images/student/paperrepeaticon.png}"/>
+                </a>
+                </dd>
+                <dd><a href="javascript:;"><SPAN style="margin-left: 10px">学术查证</SPAN>
+                    <img style="width: 27px;height: 27px;position:absolute;left: 5px;top: 5px" src="../static/images/student/sjczicon.png" th:src="@{/images/student/sjczicon.png}"/>
+                </a>
+                </dd>
+            </dl>
+        </li>
+        <!--铃铛图标-->
+        <li class="layui-nav-item " style="position: absolute;right: 95px;top: 0px">
+            <a href="" STYLE="color: #5F6368;margin-top: -5px;font-size: 16px;">
+                <img class="layui-nav-img" style="margin-top: -10px;" src="../static/images/student/lingd.png" th:src="@{/images/student/lingd.png}">
+            </a>
+        </li>
+
+        <!--最后用户图标-->
+        <li class="layui-nav-item " style="position: absolute;right: 45px;top: 8px">
+            <a href="" STYLE="margin-top: -13px;">
+                <img class="layui-nav-img" style="margin-top: -10px;" src="//t.cn/RCzsdCq">
+            </a>
+            <dl class="layui-nav-child" style="margin-top: -15px;margin-left: -35px">
+                <dd><a href="javascript:;"><SPAN style="margin-left: 18px">开通VIP</SPAN>
+                    <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/vip.png" th:src="@{/images/student/vip.png}"/>
+                </a>
+                </dd>
+                <dd><a href="javascript:;"><SPAN style="margin-left: 18px">机构账号绑定</SPAN>
+                    <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/mechanismYes.png" th:src="@{/images/student/mechanismYes.png}"/>
+                </a>
+                </dd>
+                <dd><a href="javascript:;"><SPAN style="margin-left: 18px">个人设置</SPAN>
+                    <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/settings.png" th:src="@{/images/student/settings.png}"/>
+                </a>
+                </dd>
+                <dd><a href="/login"><SPAN style="margin-left: 18px">退出账户</SPAN>
+                    <img style="width: 20px;height: 20px;position:absolute;left: 5px;top: 8px" src="../static/images/student/exit.png" th:src="@{/images/student/exit.png}"/>
+                </a>
+                </dd>
+            </dl>
+        </li>
+
+
+    </ul>
+</div>
+
+    <div class="center-content">
+<!--        作业title-->
+        <div class="homeWork-title-div">
+           <div class="title-content-div">
+               <div>
+                   <h2 style="float:left;color: #2d2d2d " th:each="cjInfos:${session.cjInfos}" th:text="${cjInfos.getHomeworkName()}"></h2>
+                   <div class="generate-final-grade">生成期末考成绩</div>
+               </div>
+                <div class="togsh">
+                    <p >截至&nbsp;&nbsp;<span th:each="cjInfos:${session.cjInfos}" th:text="${cjInfos.getDeadline()}"></span>   23:59</p>
+
+                    <div class="search-bar">
+                        <input id="search-txt" type="text" placeholder="学号，姓名">
+                        <img class="sousuo-img" src="../static/images/teacher/sousuo.png" th:src="@{/images/teacher/sousuo.png}"/>
+                    </div>
+
+                    <span class="span-forStudent">对学生显示成绩
+                        <img src="../static/images/teacher/xiala.png" th:src="@{/images/teacher/xiala.png}"/>
+                    </span>
+
+                    <div class="chachongSet">
+                        <img src="../static/images/teacher/settingbk.png" th:src="@{/images/teacher/settingbk.png}"/>
+                        查重设置
+                    </div>
+                </div>
+<!--               对学生成绩隐藏的下拉列表-->
+               <div class="student-score-dispaly-div">
+                    <a class="xianshi">对学生显示成绩</a>
+                   <a class="yingc">对学生隐藏成绩</a>
+               </div>
+           </div>
+        </div>
+
+<!--        作业显示表单-->
+        <div class="review">
+            <div class="tour1">
+                <span style="font-size: 14px;color: #5a5a5a;">全班共<span th:each="personCount:${session.personCount}" th:text="${personCount.getPersonCount()}" ></span>人</span>
+                <span style="font-size: 14px;color: #5a5a5a;float: right;cursor: pointer" >收起</span>
+                <div class="work-tips">
+                    <div>
+                        <dl class="classify" style="display: inline-block;">
+                            <dt>成绩：</dt>
+                        </dl>
+                        <button class="cur">不限</button>
+                        <span class="c-span">
+                             <input type="checkbox" name="sex" value="">
+                              已批
+                        </span>
+                        <span class="c-span"> <input type="checkbox" name="sex" value="">未批</span>
+                        <span class="c-span">  <input type="checkbox" name="sex" value="">未交</span>
+                    </div>
+
+                    <div>
+                        <dl  class="classify" >
+                            <dt>相似度：</dt>
+                        </dl>
+
+                        <div style="position: absolute;margin-top: -30px;margin-left: 190px">
+                            <button class="cur">不限</button>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">0-50%</span>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">50%-70%</span>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">70%-90%</span>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">90%-100%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <dl  class="classify" >
+                            <dt>提交状态：</dt>
+                        </dl>
+
+                        <div style="position: absolute;margin-top: -30px;margin-left: 190px">
+                            <button class="cur">不限</button>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">按时交</span>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">超时交</span>
+
+                        </div>
+                    </div>
+                    <div>
+                        <dl  class="classify" >
+                            <dt>分享状态：</dt>
+                        </dl>
+
+                        <div style="position: absolute;margin-top: -30px;margin-left: 190px">
+                            <button class="cur">不限</button>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">未分享</span>
+                            <span class="c-span">  <input type="checkbox" name="sex" value="">已分享</span>
+                        </div>
+                    </div>
+                    <div>
+                        <dl  class="classify" >
+                            <dt>作业字数：</dt>
+                        </dl>
+
+                        <div style="position: absolute;margin-top: -30px;margin-left: 190px">
+
+                           <input style="width: 50px;height: 22px">&nbsp;-&nbsp;<input style="width: 50px;height: 22px">
+                            <span class="c-span" style="color: #5a5a5a;">确定</span>
+                        </div>
+                    </div>
+                    <div>
+                        <dl  class="classify" >
+                            <dt>批改次数：</dt>
+                        </dl>
+
+                        <div style="position: absolute;margin-top: -30px;margin-left: 190px">
+
+                            <input style="width: 50px;height: 22px">&nbsp;-&nbsp;<input style="width: 50px;height: 22px">
+                            <span class="c-span" style="color: #5a5a5a;">确定</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select-group">
+                <ul class="typehead isrecruit0">
+                    <li class="dt-name" dataType="text"><a href="javascript:;" id="studyNumTitle">学号<i  class="downdot"></i></a></li>
+                    <li class="dt-name" dataType="text"><a href="javascript:;" id="">姓名<i  class="downdot"></i></a></li>
+                    <li id="li-results" dataType="num"><a href="javascript:;" id="results">成绩<i  class="downdot"></i></a></li>
+                    <li id="li-similarity" dataType="Float"><a href="javascript:;" id="similarity">相似度<i class="downdot"></i></a></li>
+                    <li id="li-submitState" dataType="num"><a href="javascript:;" id="submitState">提交状态<i class="downdot"></i></a></li>
+                    <li id="li-homeworkNumber" dataType="num"><a href="javascript:;" id="homeworkNumber">作业字数<i class="downdot"></i></a></li>
+                    <li id="dt-pigai" dataType="num"><a href="javascript:;">批改次数<i class="downdot"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="date-div">
+                        <table th:each="stuHomeworkDis:${session.stuHomeworkDis}">
+                            <tr>
+                                <td th:text="${stuHomeworkDis.getStudentNumber()}">
+                                </td>
+                                <td th:text="${stuHomeworkDis.getStudentName()}"></td>
+                                <td><input class="score-inp" th:id="${stuHomeworkDis.getStudentId()}" th:value="${stuHomeworkDis.getScore()}" onblur="updateScore(this)"><span style="color: #AAA;font-size: 12px">/100</span></td>
+                                <td></td>
+                                <td style="color: #AAA;font-size: 16px" th:text="${stuHomeworkDis.getSubmitDate()}"> </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a class="pyue" th:href="@{'file/'+${stuHomeworkDis.getPath()}}" target="_blank">
+                                        进入批阅
+                                    </a>
+                                </td>
+                                <td>
+                                    <input class="score-StudentId"  th:value="${stuHomeworkDis.getStudentId()}" type="hidden">
+                                    <input class="score-HomeworkId" th:value="${stuHomeworkDis.getHomeworkId()}" type="hidden">
+                                </td>
+                            </tr>
+                        </table>
+            </div>
+
+        </div>
+    </div>
+<script>
+    function updateScore(ob) {
+        var id=$(ob).attr("id");
+        var value=Number($(ob).val());
+        console.log(typeof value)
+        if (value!=null && value<=100 && value>=0){
+            $.post({
+                url:"/updateScore",
+                dataType : "json",
+                data:{"studentId":id,"homeworkId":$(".score-HomeworkId").val(),"score":value},
+                success:function (date) {
+
+                    console.log(data.homeworkId)
+                }
+            })
+            alert("分数已更改！")
+        }else if (value==null){
+            alert("未评写分数")
+        }else if (value<=100 || value>=0){
+            alert("分数不在范围内")
+        }
+
+    }
+</script>
+</body>
+</html>

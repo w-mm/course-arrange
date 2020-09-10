@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wmm.ketangpai.dao.UsersDao">
+<!--    namespace要跟接口的全类名绑定起来-->
+
+
+<!--登陆方法-->
+    <select  id="login" resultType="com.wmm.ketangpai.entity.Users">
+        select userId,userPassword,userName,userSchool,userRole from users where userId=#{userId} and userPassword=#{userPassword}
+    </select>
+
+    <!--注册方法-->
+    <insert id="save"  parameterType="Users">
+        insert into users values(#{userId},#{userPassword},#{userName},#{userSchool},#{userRole})
+    </insert>
+    <insert id="saveS"  parameterType="Users">
+        insert into students values(#{userId},#{userPassword},#{userName},#{studentNumber},#{userSchool},#{userRole})
+    </insert>
+    <insert id="saveT"  parameterType="Users">
+        insert into teachers values(#{userId},#{userPassword},#{userName},#{userSchool},#{userRole})
+    </insert>
+
+<!--    查询学生课程-->
+    <select id="findStudentCourse" resultType="com.wmm.ketangpai.entity.Users">
+       SELECT *
+        from course,stucourse,teacourse,teachers
+        where course.courseId=stucourse.courseId AND course.courseId=teacourse.courseId and teacourse.teacherId=teachers.teacherId
+                and studentId=#{userId};
+    </select>
+
+    <!--    查询学生课程作业-->
+    <select id="findStudentCourseHomework" resultType="com.wmm.ketangpai.entity.Users">
+       SELECT *
+        from course,stucourse,teacourse,teachers,couhomework,homework
+        where course.courseId=stucourse.courseId AND course.courseId=teacourse.courseId and teacourse.teacherId=teachers.teacherId
+                and couhomework.homeworkId=homework.homeworkId and couhomework.courseId=course.courseId
+                and studentId=#{userId};
+    </select>
+
+
+</mapper>
